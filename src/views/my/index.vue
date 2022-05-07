@@ -13,7 +13,9 @@
           <span class="text">黑马头条号</span>
         </div>
         <div class="right">
-          <van-button round size="mini" type="default">编辑资料</van-button>
+          <van-button round size="mini" type="default" to="/userprofile"
+            >编辑资料</van-button
+          >
         </div>
       </div>
       <div class="data-stats">

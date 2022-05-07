@@ -8,17 +8,24 @@
       error-text="加载失败，请稍后重试"
       @load="onLoad"
     >
-      <van-cell
+      <article-item
+        v-for="(article, index) in list"
+        :key="index"
+        :article="article"
+      >
+      </article-item>
+      <!--   <van-cell
         v-for="(article, index) in list"
         :key="index"
         :title="article.title"
-      />
+      /> -->
     </van-list>
   </div>
 </template>
 
 <script>
 import { getSearchResult } from "@/api/search";
+import ArticleItem from "@/components/article-item";
 export default {
   name: "SearchResult",
   props: {
@@ -36,6 +43,9 @@ export default {
       perPage: 20,
       error: false,
     };
+  },
+  components: {
+    ArticleItem,
   },
   methods: {
     async onLoad() {
